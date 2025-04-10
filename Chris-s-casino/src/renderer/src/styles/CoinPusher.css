@@ -1,0 +1,139 @@
+.coin-pusher-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1100;
+}
+
+.coin-pusher-game {
+  background: #2c3e50;
+  padding: 20px;
+  border-radius: 15px;
+  width: 800px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+.coin-pusher-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.coin-pusher-header h2 {
+  color: #f1c40f;
+  margin: 0;
+}
+
+.coin-pusher-score {
+  color: #2ecc71;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.coin-pusher-container {
+  position: relative;
+  background: #34495e;
+  height: 400px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.coin-dropper {
+  position: absolute;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  background: #e74c3c;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  transition: left 0.1s ease;
+}
+
+.coin {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: #e67e22;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  transition: top 0.05s linear;
+}
+
+.new-coin {
+  animation: drop 1s linear;
+}
+
+.platform {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: #2c3e50;
+}
+
+.pusher {
+  position: absolute;
+  bottom: 100px;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background: #95a5a6;
+  animation: push 2s infinite;
+}
+
+.coin-pusher-controls {
+  display: flex;
+  justify-content: center;
+}
+
+.drop-button {
+  padding: 10px 30px;
+  font-size: 18px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.drop-button:disabled {
+  background: #95a5a6;
+  cursor: not-allowed;
+}
+
+@keyframes push {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+}
+
+@keyframes drop {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}

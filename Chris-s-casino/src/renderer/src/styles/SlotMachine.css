@@ -1,0 +1,225 @@
+.slot-machine {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background: #2c3e50;
+  border-radius: 10px;
+  color: white;
+}
+
+.balance-display {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.bet-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.bet-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bet-buttons button {
+  min-width: 40px;
+  padding: 5px 15px;
+}
+
+.bet-buttons span {
+  min-width: 100px;
+  text-align: center;
+}
+
+.reels-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.spin-button {
+  padding: 15px 40px;
+  font-size: 24px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.spin-button:disabled {
+  background: #95a5a6;
+  cursor: not-allowed;
+}
+
+.win-display {
+  text-align: center;
+  min-height: 60px;
+  margin-bottom: 20px;
+}
+
+.last-win {
+  font-size: 28px;
+  color: #2ecc71;
+  font-weight: bold;
+  animation: pulse 0.5s ease-in-out;
+}
+
+.message {
+  font-size: 20px;
+  color: #f1c40f;
+  margin-top: 5px;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.info-button {
+  background: none;
+  border: 2px solid #3498db;
+  color: #3498db;
+  padding: 5px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+
+.info-button:hover {
+  background: #3498db;
+  color: white;
+}
+
+.game-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.free-spins-counter {
+  font-size: 24px;
+  color: #f1c40f;
+  font-weight: bold;
+  animation: pulse 1s infinite;
+  margin-top: 10px;
+}
+
+.spin-button:enabled {
+  animation: none;
+}
+
+.spin-button:enabled:hover {
+  transform: scale(1.05);
+  background: #c0392b;
+}
+
+/* When free spins are active */
+.spin-button[disabled] {
+  background: #95a5a6;
+  cursor: not-allowed;
+  animation: none;
+}
+
+.spin-button:enabled:active {
+  transform: scale(0.95);
+}
+
+.game-over-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.game-over-content {
+  background: #2c3e50;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.game-over-content h2 {
+  color: #e74c3c;
+  font-size: 36px;
+  margin: 0 0 20px 0;
+}
+
+.game-over-content p {
+  color: #ecf0f1;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.restart-button {
+  background: #27ae60;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.restart-button:hover {
+  background: #2ecc71;
+  transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.prestige {
+  font-size: 0.8em;
+  color: gold;
+  margin-left: 0.5rem;
+  padding: 0.2rem 0.5rem;
+  background: rgba(255, 215, 0, 0.1);
+  border-radius: 0.3rem;
+  text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+}
+
+/* Add these styles for the bet slider */
+.bet-slider {
+  width: 250px;
+  margin: 5px 0;
+  cursor: pointer;
+}
+
+.bet-slider:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

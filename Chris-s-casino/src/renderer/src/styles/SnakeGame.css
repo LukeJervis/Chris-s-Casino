@@ -1,0 +1,211 @@
+.snake-game-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  z-index: 1100;
+}
+
+.snake-game {
+  width: 500px;
+  margin-right: 20px;
+  background: #2c3e50;
+  padding: 20px;
+  border-radius: 15px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.multiplier-display {
+  color: #f1c40f;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 2px;
+  background: #34495e;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.square {
+  aspect-ratio: 1;
+  background: #2c3e50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: white;
+  position: relative;
+  border-radius: 4px;
+  padding: 5px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.square.current {
+  background: #e74c3c;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(231, 76, 60, 0.5);
+}
+
+.square.snake {
+  background: #c0392b;
+}
+
+.square.ladder {
+  background: #27ae60;
+  border-width: 3px;
+}
+
+.square.ladder-destination {
+  border-width: 3px;
+  border-style: dashed;
+}
+
+.ladder-info {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  font-size: 1em;
+  color: white;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+.game-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.game-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.dice-display {
+  font-size: 20px;
+  color: #f1c40f;
+}
+
+.game-message {
+  color: #2ecc71;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.cashout-button {
+  background: #27ae60;
+}
+
+.cashout-button:hover:not(:disabled) {
+  background: #2ecc71;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:disabled {
+  background: #95a5a6;
+  cursor: not-allowed;
+}
+
+.close-button {
+  display: none;
+}
+
+.player-position {
+  background: rgba(0, 0, 255, 0.2) !important;
+}
+
+.player {
+  position: absolute;
+  font-size: 24px;
+  z-index: 2;
+  animation: bounce 0.5s infinite alternate;
+}
+
+.player-position::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: inset 0 0 10px rgba(0, 0, 255, 0.5);
+  pointer-events: none;
+}
+
+.snake-game.game-over {
+  animation: shake 0.5s;
+}
+
+.square.lost {
+  background: #e74c3c !important;
+  animation: pulse 1s infinite;
+}
+
+.game-over-message {
+  color: #e74c3c !important;
+  font-size: 24px !important;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(231, 76, 60, 0.5);
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-10px);
+  }
+  75% {
+    transform: translateX(10px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Update hover effects */
+.square.ladder:hover,
+.square.ladder-destination:hover {
+  transform: scale(1.1);
+  z-index: 1;
+}

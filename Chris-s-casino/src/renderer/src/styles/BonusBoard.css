@@ -1,0 +1,115 @@
+.bonus-board {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.95);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+  z-index: 1000;
+  color: white;
+  text-align: center;
+}
+
+.bonus-header {
+  margin-bottom: 1.5rem;
+}
+
+.bonus-header h2 {
+  color: gold;
+  margin-bottom: 0.5rem;
+}
+
+.picks-remaining {
+  color: #ffd700;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.bonus-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.bonus-tile {
+  aspect-ratio: 1;
+  background: linear-gradient(45deg, #2c3e50, #3498db);
+  border: 2px solid #ffd700;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.bonus-tile:hover:not(.revealed):not(.game-complete) {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+}
+
+.bonus-tile.revealed {
+  background: linear-gradient(45deg, #27ae60, #2ecc71);
+  transform: rotateY(360deg);
+  transition: all 0.5s ease;
+}
+
+.bonus-tile.game-complete:not(.revealed) {
+  background: linear-gradient(45deg, #95a5a6, #7f8c8d);
+  cursor: not-allowed;
+}
+
+.tile-cover {
+  font-size: 2rem;
+  color: #ffd700;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.prize-amount {
+  font-size: 1.2rem;
+  color: white;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.bonus-total {
+  font-size: 1.5rem;
+  color: #ffd700;
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 2px solid #ffd700;
+  border-radius: 0.5rem;
+  animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow:
+      0 0 5px #fff,
+      0 0 10px #fff,
+      0 0 15px #ffd700,
+      0 0 20px #ffd700;
+  }
+  to {
+    box-shadow:
+      0 0 10px #fff,
+      0 0 20px #fff,
+      0 0 30px #ffd700,
+      0 0 40px #ffd700;
+  }
+}
+
+.level-bonus {
+  color: #ffd700;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background: rgba(255, 215, 0, 0.1);
+  border-radius: 0.5rem;
+  text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+}

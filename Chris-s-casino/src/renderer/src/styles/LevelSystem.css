@@ -1,0 +1,158 @@
+.level-system {
+  background: #34495e;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px 0;
+  width: 100%;
+  max-width: 600px;
+}
+
+.level-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.level-header h3 {
+  color: #f1c40f;
+  margin: 0;
+  font-size: 24px;
+}
+
+.xp-display {
+  color: #2ecc71;
+  font-weight: bold;
+}
+
+.xp-progress-bar {
+  background: #2c3e50;
+  height: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.xp-progress {
+  height: 100%;
+  background: linear-gradient(90deg, #2ecc71, #27ae60);
+  transition: width 0.3s ease;
+}
+
+.features-section {
+  color: white;
+}
+
+.features-section h4 {
+  color: #3498db;
+  margin: 15px 0 10px;
+}
+
+.unlocked-features,
+.locked-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.feature-item {
+  background: #34495e;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.feature-item.locked {
+  color: #95a5a6;
+}
+
+.level-up-notification {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(46, 204, 113, 0.9);
+  padding: 15px 30px;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  animation:
+    slideDown 0.5s ease,
+    fadeOut 0.5s ease 2.5s forwards;
+  z-index: 1000;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translate(-50%, -100%);
+  }
+  to {
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.next-level {
+  margin-top: 20px;
+  padding: 15px;
+  background: #2c3e50;
+  border-radius: 8px;
+  border: 1px solid #3498db;
+}
+
+.next-level h4 {
+  color: #3498db;
+  margin: 0 0 10px 0;
+}
+
+.next-features {
+  color: #bdc3c7;
+  font-style: italic;
+}
+
+.feature-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  padding: 10px;
+}
+
+.feature-category {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 8px;
+}
+
+.feature-category h4 {
+  margin: 0 0 5px 0;
+  color: #f1c40f;
+  font-size: 0.9em;
+}
+
+.feature-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.feature-item {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.8em;
+}

@@ -1,0 +1,155 @@
+.higher-lower-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  z-index: 1100;
+}
+
+.higher-lower-game {
+  width: 500px;
+  margin-right: 20px;
+  background: #2c3e50;
+  padding: 20px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.multiplier {
+  color: #f1c40f;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.current-card {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card {
+  width: 150px;
+  height: 220px;
+  background: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.card.red {
+  color: #e74c3c;
+}
+
+.card.black {
+  color: #2c3e50;
+}
+
+.card-value {
+  font-size: 72px;
+  font-weight: bold;
+}
+
+.card-suit {
+  font-size: 96px;
+  line-height: 1;
+}
+
+.game-controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.higher-button,
+.lower-button {
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.higher-button {
+  background: #27ae60;
+  color: white;
+}
+
+.lower-button {
+  background: #e74c3c;
+  color: white;
+}
+
+.cashout-button {
+  background: #f1c40f;
+  color: #2c3e50;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.game-message {
+  text-align: center;
+  font-size: 24px;
+  color: #f1c40f;
+  font-weight: bold;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+button:not(:disabled):hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 1rem 0;
+}
+
+.current-card,
+.next-card {
+  position: relative;
+}
+
+.next-card {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
